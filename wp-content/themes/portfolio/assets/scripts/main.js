@@ -19,6 +19,16 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+
+        // ==========================================================================
+        // Skill bar animation
+        // ==========================================================================
+        $('.skillbar').each(function(){
+            $(this).find('.skillbar-bar').animate({
+                width:$(this).attr('data-percent')
+            },6000);
+        })
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -74,4 +84,4 @@
   // Load Events
   $(document).ready(UTIL.loadEvents);
 
-})(jQuery); // Fully reference jQuery after this point.
+})($); // Fully reference $ after this point.

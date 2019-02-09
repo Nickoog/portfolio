@@ -26,3 +26,13 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+/* INCLUDE ALL PHP FILES IN LIB/INC */
+foreach(glob(get_template_directory() . "/lib/inc/*.php") as $file){
+    require $file;
+}
+
+/* ACF Options page feature */
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();	
+}
