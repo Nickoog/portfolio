@@ -1,0 +1,75 @@
+.contact-wrapper {
+    margin: 20px;
+    position: fixed;
+    top: 4px;
+    right: 0;
+    cursor: pointer;
+    .fa {
+        color: black;
+    }
+    @keyframes horizontal {
+        0% {
+            -webkit-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            transform: translate(0,0);
+        }
+      
+        6% {
+            -webkit-transform: translate(5px,0);
+            -ms-transform: translate(5px,0);
+            transform: translate(5px,0);
+        }
+      
+        12% {
+            -webkit-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            transform: translate(0,0);
+        }
+      
+        18% {
+            -webkit-transform: translate(5px,0);
+            -ms-transform: translate(5px,0);
+            transform: translate(5px,0);
+        }
+      
+        24% {
+            -webkit-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            transform: translate(0,0);
+        }
+      
+        30% {
+            -webkit-transform: translate(5px,0);
+            -ms-transform: translate(5px,0);
+            transform: translate(5px,0);
+        }
+      
+        36% {
+            -webkit-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            transform: translate(0,0);
+        }
+    }
+    .faa-horizontal.animated{
+        &:hover {
+            animation: horizontal 2s ease infinite;
+        }
+    }
+    .fa-envelope{
+        display: block;
+    }
+    .fa-envelope-open {
+        display: none;
+    }
+}
+
+.contact-wrapper.open {
+    top: 0;
+    .fa-envelope{
+        display: none;
+    }
+    .fa-envelope-open {
+        display: block;
+    }
+}
+    

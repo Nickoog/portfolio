@@ -1,0 +1,45 @@
+.banner{
+    .background-image {
+        position: relative;
+        background-color: #cccccc;
+        height: 100vh;
+        width: 100vw;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .filter {
+            background-color: rgba(255,255,255,0.2);
+            height: 100%;
+            width: 100%;
+            .container {
+                position: relative;
+                left: 0;
+                top: 20%;
+                .row {
+                    .skillbar-container {
+    
+                    }
+                    .text-container {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        color: black;
+                        text-align: center;
+                        height: 100%;
+                        .title-wrapper {
+                
+                        }
+                        .separator {
+                            background-color: yellow;
+                            height: 2px;
+                            width: 50px;
+                        }
+                        .text-wrapper {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
