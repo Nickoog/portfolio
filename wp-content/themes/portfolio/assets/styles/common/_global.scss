@@ -1,5 +1,6 @@
 body {
     font-family: 'Quicksand', sans-serif;
+    color: gray;
     h1 {
         font-size: 3rem;
         font-weight: 700;
@@ -8,5 +9,15 @@ body {
     h2 {
         font-size: 2rem;
         font-weight: 400;
+    }
+    .section-title-wrapper{
+        display: flex;
+        flex-direction: column;
+        h2 {
+            font-size: 1.5rem;
+        }
+        strong {
+            color: black;
+        }
     }
 }

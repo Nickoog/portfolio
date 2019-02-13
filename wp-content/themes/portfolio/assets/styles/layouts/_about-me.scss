@@ -1,0 +1,46 @@
+#about-me {
+    height: 100vh;
+    .container {
+        padding: 75px 0;
+        height: 100%;
+        .section-title-wrapper {
+        }
+        .content-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .text-container {
+                h3{
+                    color: black;
+                }
+            }
+            .button-wrapper {
+    
+            }
+        }
+    }
+    .image-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: -105%;
+        height: 100%;
+        width: auto;
+        background-color: rgba(255,255,255,0.2);
+        opacity: 0;
+        z-index: -1;
+        transition: all 1s ease-out;
+        img {
+            width: 100%;
+            height: auto; 
+        }
+    }
+}
+
+#about-me.slide-in {
+    .image-wrapper {
+        opacity: 1;
+        left: -23%;
+    }
+}

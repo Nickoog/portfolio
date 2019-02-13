@@ -1,5 +1,5 @@
 <header class="banner">
-    <div class="background-image" style="background-image:url('https://as1.ftcdn.net/jpg/01/26/19/46/500_F_126194680_m4Kt4S0DoQMW0vNjoyDH7U8vlkBDV007.jpg')">
+    <div class="background-image" style="background-image:url('https://as1.ftcdn.net/jpg/01/29/15/14/500_F_129151469_W5XFsIXPV0MLmzcPFqK1ZSoDmDOyTCEq.jpg')">
         <div class='filter'>
             <!-- <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
             <nav class="nav-primary">
@@ -30,7 +30,7 @@
                     <div class="col-md-7">
                         <div class="text-container">
                             <div class="title-wrapper">
-                                <h1>Nicolas Hoog</h1>
+                                <h1 class="animated infinite bounce delay-2s">Nicolas Hoog</h1>
                             </div>
                             <span class="separator"></span>
                             <div class="text-wrapper">

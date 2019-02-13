@@ -8,9 +8,10 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0",
-    "owl.carousel": "^2.3.4",
-    "scrollmagic": "^2.0.6",
-    "font-awesome": "fontAwesome#4.7.0"
+    "font-awesome": "fontAwesome#4.7.0",
+    "gsap": "^2.0.1",
+    "scrollmagic": "^2.0.5",
+    "animate.css": "^3.7.0"
   },
   "overrides": {
     "bootstrap": {
@@ -20,10 +21,25 @@
       ]
     },
     "font-awesome": {
-        "main": [
-          "./scss/font-awesome.scss",
-          "./fonts/*"
-        ]
+      "main": [
+        "./scss/font-awesome.scss",
+        "./fonts/*"
+      ]
+    },
+    "gsap": {
+      "main": [
+        "./src/uncompressed/TweenMax.js"
+      ]
+    },
+    "scrollmagic": {
+      "main": [
+        "./scrollmagic/uncompressed/ScrollMagic.js",
+        "./scrollmagic/uncompressed/plugins/animation.gsap.js",
+        "./scrollmagic/uncompressed/plugins/debug.addIndicators.js"
+      ]
+    },
+    "animate.css": {
+        "main": [ "./animate.css" ]
     }
   }
 }

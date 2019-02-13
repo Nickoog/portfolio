@@ -27,13 +27,34 @@
             $(this).find('.skillbar-bar').animate({
                 width:$(this).attr('data-percent')
             },6000);
-        })
+        });
         // ==========================================================================
         // Contact
         // ==========================================================================
         $('.contact-wrapper').on('click', function(){
             $(this).toggleClass('open');
+        });
+        // ==========================================================================
+        // Modal
+        // ==========================================================================
+        $('#exampleModal').on('hidden.bs.modal', function (e) {
+            console.log('ici');
+            $('.contact-wrapper').removeClass('open');
+        });
+        // ==========================================================================
+        // Scrollmagic
+        // ==========================================================================
+
+        // init controller
+        var controller = new ScrollMagic.Controller();
+
+        // build scene
+        var scene = new ScrollMagic.Scene({
+            triggerElement: "#about-me"
         })
+        .setClassToggle("#about-me", 'slide-in') // trigger a TweenMax.to tween
+        //.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+        .addTo(controller);
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -89,4 +110,4 @@
   // Load Events
   $(document).ready(UTIL.loadEvents);
 
-})($); // Fully reference $ after this point.
+})(jQuery); // Fully reference jQuery after this point.
