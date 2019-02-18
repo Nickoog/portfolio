@@ -23,6 +23,6 @@ function get_skill($icon, $title, $content){
 function get_about_me() {
     include(locate_template("/templates/about-me.php"));
 };
-function get_expert_in() {
-    include(locate_template("/templates/expert-in.php"));
+function get_my_projects() {
+    include(locate_template("/templates/my-projects.php"));
 };

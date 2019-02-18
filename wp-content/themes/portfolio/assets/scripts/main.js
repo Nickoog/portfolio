@@ -55,6 +55,42 @@
         .setClassToggle("#about-me", 'slide-in') // trigger a TweenMax.to tween
         //.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
         .addTo(controller);
+
+        // ==========================================================================
+        // Owl carousel
+        // ==========================================================================
+
+        // Declare Carousel jquery object
+
+        // Carousel initialization
+        
+        $(".owl-carousel").owlCarousel({
+            items: 1,
+            center: true,
+            loop: true,
+            nav: true,
+            dots: false,
+            margin: 50,
+            autoplay: false,
+            navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn'
+        });
+        var owl = $('.owl-carousel');
+        owl.owlCarousel();
+        owl.on('translate.owl.carousel', function (event) {
+        $('.owl-carousel .translate').removeClass('animated fadeInRight').hide();
+        //$('.owl-carousel img').removeClass('animated fadeIn').hide();
+        $('.owl-carousel p').removeClass('animated fadeInUp').hide();
+        //$('.owl-carousel .boxed-btn').removeClass('animated').hide();
+        });
+        
+        owl.on('translated.owl.carousel', function (event) {
+            $('.owl-carousel .translate').addClass('animated fadeInRight').show();
+            $('.owl-carousel p').addClass('animated fadeInUp').show();
+           // $('.owl-carousel img').addClass('animated fadeIn').show();
+            //$('.owl-carousel .boxed-btn').addClass('animated fadeInDown').show();
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
