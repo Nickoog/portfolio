@@ -18,6 +18,12 @@ function get_separator($width, $height, $color="black", $option=""){
 function get_skill($icon, $title, $content){
     include(locate_template("/templates/components/skill.php"));
 };
+function get_input($label){
+    include(locate_template("/templates/components/inputs.php"));
+};
+function get_textarea($label){
+    include(locate_template("/templates/components/textarea.php"));
+};
 
 //layouts
 function get_about_me() {

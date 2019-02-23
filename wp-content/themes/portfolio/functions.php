@@ -36,5 +36,3 @@ foreach(glob(get_template_directory() . "/lib/inc/*.php") as $file){
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();	
 }
-
-define( 'WP_DEBUG', true );

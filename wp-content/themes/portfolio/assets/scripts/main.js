@@ -81,13 +81,13 @@
         owl.on('translate.owl.carousel', function (event) {
         $('.owl-carousel .translate').removeClass('animated fadeInRight').hide();
         //$('.owl-carousel img').removeClass('animated fadeIn').hide();
-        $('.owl-carousel p').removeClass('animated fadeInUp').hide();
+        $('.owl-carousel p').removeClass('animated fadeInRight').hide();
         //$('.owl-carousel .boxed-btn').removeClass('animated').hide();
         });
         
         owl.on('translated.owl.carousel', function (event) {
             $('.owl-carousel .translate').addClass('animated fadeInRight').show();
-            $('.owl-carousel p').addClass('animated fadeInUp').show();
+            $('.owl-carousel p').addClass('animated fadeInRight').show();
            // $('.owl-carousel img').addClass('animated fadeIn').show();
             //$('.owl-carousel .boxed-btn').addClass('animated fadeInDown').show();
         });
