@@ -91,6 +91,115 @@
            // $('.owl-carousel img').addClass('animated fadeIn').show();
             //$('.owl-carousel .boxed-btn').addClass('animated fadeInDown').show();
         });
+        // ==========================================================================
+        // Form 
+        // ==========================================================================
+        var email = '';
+
+        function checkEmail(value) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(value).toLowerCase());
+        }
+
+        function check_required_inputs(elements) {
+            var boolean = true;
+            var first = null;
+            elements.each(function () {
+                if ($(this).val() === "") {
+                    $(this).parents(".textInput").addClass("failed");
+                    if (first == null) {
+                        first = $(this);
+                    }
+                    boolean = false;
+                } else {
+                    $(this).parents(".textInput").removeClass("failed");
+                    $(this).parents(".textInput").addClass("success");
+                }
+                if ($(this).parents(".textInput").hasClass("email")) {
+                    if (!checkEmail($(this).val())) {
+                        $(this).parents(".textInput").addClass("failed");
+                        if (first == null) {
+                            first = $(this);
+                        }
+                        boolean = false;
+                    }
+                }
+            });
+            if (first != null) {
+                first.focus();
+            }
+            return boolean;
+        }
+        // check email value
+        $(".textInput.email input").keyup(function (e) {
+            $(this).parents(".textInput").removeClass("success");
+            $(this).parents(".textInput").removeClass("failed");
+            if (checkEmail(e.target.value)) {
+                $(this).parents(".textInput").addClass("success");
+                email=$(this).val();
+            } else {
+                $(this).parents(".textInput").addClass("failed");
+            }
+        });
+
+        // Send form
+        $(".portfolio-button[type='submit']").on("click", function (e) {
+            e.preventDefault();
+            var form = new FormData();
+            var forms = $(this).parents("form");
+            var fd = new FormData(forms[0]);
+            var object = {};
+            fd.forEach(function (value, key) {
+                if (object[key]) {
+                    object[key] += ", " + value;
+                } else {
+                    object[key] = value;
+                }
+            });
+            form.append('action', 'ajax_forms');
+            form.append('title', forms.attr("object"));
+            form.append('email', email);
+            form.append('forms', JSON.stringify(object));
+            var defaultvalue = forms.find(".portfolio-button[type='submit']").html();
+            console.log(object, forms, email);
+            if ( check_required_inputs(forms.find(".required input")) ) {
+                $.ajax({
+                    url: admin_ajax.ajax_url,
+                    data: form,
+                    contentType: false,
+                    processData: false,
+                    type: 'POST',
+                    beforeSend: function () {
+                        var loader = forms.find(".fa-spinner.fa-pulse");
+                        var forContainer = forms.find(".form-container");
+                        forContainer.fadeOut(function(){
+                            loader.fadeIn();
+                        });
+                    },
+                    success: function (html) {
+                        console.log(html);
+                        var loader = forms.find(".fa-spinner.fa-pulse");
+                        var sent = forms.find(".sent-form");
+                        var error = forms.find(".error");
+                        var forContainer = forms.find(".form-container");
+                        if (html === "1") {
+                            loader.fadeOut(function() {
+                                sent.css({'display':'flex'}).addClass("animated bounceInLeft");
+                            });
+                        } else {
+                            loader.fadeOut(function() {
+                                error.css({'display':'flex'}).addClass("animated bounceInLeft");
+                            });
+                            setTimeout(function () {
+                                error.fadeOut(function(){
+                                    forContainer.css({'display':'block'}).addClass("animated bounceInLeft");
+                                });
+                            }, 5000);
+                        }
+                    }
+                });
+            }
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

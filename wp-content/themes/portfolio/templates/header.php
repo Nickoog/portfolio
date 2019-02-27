@@ -30,7 +30,7 @@
                     <div class="col-md-7">
                         <div class="text-container">
                             <div class="title-wrapper">
-                                <h1 class="animated infinite bounce delay-2s">Nicolas Hoog</h1>
+                                <h1 class="">Nicolas Hoog</h1>
                             </div>
                             <span class="separator"></span>
                             <div class="text-wrapper">

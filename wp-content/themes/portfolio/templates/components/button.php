@@ -1,5 +1,10 @@
 <div class="button-wrapper">
-    <a class="portfolio-button" href="<?= $action_button; ?>">
-        <?= $text_button ?>
-    </a>
+    <button 
+        type="<?= $type; ?>" 
+        name="<?= $button_title ?>" 
+        class="portfolio-button <?= $button_style ?>"
+    >
+        <span class="text"><?= $button_title ?></span>
+        <span class="<?= $icon ?>"></span>
+    </button>
 </div>

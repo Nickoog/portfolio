@@ -1,63 +1,55 @@
-.textarea-wrapper {
+.input-textarea {
+    height: 125px;
+    margin-top: 20px;
     position: relative;
-    margin: auto;
-    width: 100%;
-    max-width: 280px;
-    * {
-        box-sizing: border-box;
-    }
-    .label {
-        position: absolute;
-        top: 16px;
-        left: 0;
-        font-size: 16px;
-        color: #9098a9;
-        font-weight: 500;
-        transform-origin: 0 0;
-        transition: all 0.2s ease;
-    }
-    .span-border {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2px;
+    .inp {
+        height: 100%;
         width: 100%;
-        background: #07f;
-        transform: scaleX(0);
-        transform-origin: 0 0;
-        transition: all 0.15s ease;
-    }
-    textarea {
-        -webkit-appearance: none;
-        width: 100%;
-        border: 0;
-        font-family: inherit;
-        padding: 12px 0;
-        height: 48px;
-        font-size: 16px;
-        font-weight: 500;
-        border-bottom: 2px solid #c8ccd4;
-        background: none;
-        border-radius: 0;
-        color: #223254;
-        transition: all 0.15s ease;
-        &:hover {
-            background: rgba(34,50,84,0.03);
+        .span-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: gray;
+            transform-origin: 0 0;
+            transition: all 0.2s ease;
         }
-        &:not(:placeholder-shown)+ span {
-            color: #5a667f;
-            transform: translateY(-26px) scale(0.75);
+        .span-border {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background: yellow;
+            transform: scaleX(0);
+            transform-origin: 0 0;
+            transition: all 0.15s ease;
         }
-        &:focus {
-            background: none;
-            outline: none;
+        textarea {
+            width: 100%;
+            height: 100%;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 16px;
+            border: none;
+            border-bottom: 1px solid #c8ccd4;
+            color: gray;
+            &:hover {
+                background: rgba(34,50,84,0.03);
+            }
+            &:focus {
+                background: none;
+                outline: none;
+            }
+            &:not(:placeholder-shown)+ span {
+                color: #5a667f;
+                transform: translateY(-16px) scale(0.75);
+            }
+            &:focus + span {
+                color: yellow;
+                transform: translateY(-16px) scale(0.75);
+            }
         }
-        &:focus + span {
-            color: #07f;
-            transform: translateY(-26px) scale(0.75);
+        textarea:focus + span + .span-border {
+            transform: scaleX(1);
         }
-    }
-    textarea:focus + span + .span-border {
-        transform: scaleX(1);
     }
 }

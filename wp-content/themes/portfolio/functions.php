@@ -36,3 +36,29 @@ foreach(glob(get_template_directory() . "/lib/inc/*.php") as $file){
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();	
 }
+/* Email setup */
+add_action( 'phpmailer_init', 'send_smtp_email' );
+function send_smtp_email( $phpmailer ) {
+    $phpmailer->IsHTML(true); 
+}
+
+add_action( 'wp_ajax_nopriv_ajax_forms', 'ajax_forms' );
+add_action( 'wp_ajax_ajax_forms', 'ajax_forms' );
+function ajax_forms() {
+    $post =str_replace("\\","",$_POST['forms']);
+    $obj = json_decode($post,true);
+    $text = '';
+    $recipiant = 'nicolas,hoog@gmail.com';
+    //set confirmation mail
+    // $email = $_POST['email'];
+    // $subjet = get_field('subjet','option');
+    // $message = get_field('message','option');
+
+    foreach ($obj as $key => $value){
+        $text .="<br><br><Strong>".$key."</Strong>: ".$value."<br>";
+    }
+    echo wp_mail( $recipiant, $_POST['title'], $text);
+    die();
+}
+// disable admin bar
+show_admin_bar(false);

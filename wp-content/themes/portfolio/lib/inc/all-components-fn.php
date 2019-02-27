@@ -9,7 +9,7 @@ function get_contact(){
 function get_modal(){
     include(locate_template("/templates/components/modal.php"));
 };
-function get_button($text_button, $action_button="#") {
+function get_button($button_title, $type="button", $icon="", $button_style="") {
     include(locate_template("/templates/components/button.php"));
 };
 function get_separator($width, $height, $color="black", $option=""){
@@ -18,10 +18,10 @@ function get_separator($width, $height, $color="black", $option=""){
 function get_skill($icon, $title, $content){
     include(locate_template("/templates/components/skill.php"));
 };
-function get_input($label){
+function get_input($label, $required=false, $type="text", $state=""){
     include(locate_template("/templates/components/inputs.php"));
 };
-function get_textarea($label){
+function get_textarea($label, $row="8"){
     include(locate_template("/templates/components/textarea.php"));
 };
 

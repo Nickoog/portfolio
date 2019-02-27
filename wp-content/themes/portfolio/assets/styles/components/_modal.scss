@@ -1,5 +1,79 @@
 .modal {
     .modal-content {
         padding: 50px;
+        .modal-header {
+            padding: 0;
+            border-bottom: none;
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+            }
+        }
+        .modal-body {
+            padding: 0;
+            min-height: 372px;
+            #subscription-forms {
+                .form-container {
+                    .info-container {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        padding-left: 20px;
+                        border-left: 2px solid #ff0;
+                        height: 100%;
+                        margin-top: 20px;
+                        .info-title {
+                            color: black;
+                            font-weight: bold;
+                            font-size: 18px;
+                            .fa {
+                                margin-right: 15px;
+                            }
+                        }
+                    }
+                    .button-wrapper {
+                        justify-content: center;
+                        margin-top: 50px;
+                    }
+                }
+                .fa-spinner {
+                    display: none;
+                    position: absolute;
+                    top: 40%;
+                    width: 100%;
+                    text-align: center;
+                }
+                .sent-form {
+                    display: none;
+                    position: absolute;
+                    top: 40%;
+                    width: 100%;
+                    justify-content: center;
+                    align-items: baseline;
+                    font-size: 25px;
+                    .fa {
+                        margin-right: 5px;
+                        color: green;
+                    }
+                }
+                .error {
+                    display: none;
+                    position: absolute;
+                    top: 40%;
+                    width: 100%;
+                    justify-content: center;
+                    align-items: baseline;
+                    font-size: 25px;
+                    .fa {
+                        margin-right: 5px;
+                        color: red;
+                    }
+                }
+                strong {
+                    color: black;
+                }
+            }
+        }
     }
 }
