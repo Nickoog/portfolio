@@ -1,105 +1,111 @@
 #my-projects {
     height: 100vh;
-    .container {
-        padding: 75px 0;
-        height: 100%; 
-
-        .owl-carousel { 
-            position: relative;
-            height: 100%;
-            padding: 20px;
-            .owl-stage-outer {
+    .background-image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        .container {
+            padding: 75px 0;
+            height: 100%; 
+    
+            .owl-carousel { 
+                position: relative;
                 height: 100%;
-                .owl-stage {
+                padding: 20px;
+                .owl-stage-outer {
                     height: 100%;
-                    .owl-item {
+                    .owl-stage {
                         height: 100%;
-                        .item {
+                        .owl-item {
                             height: 100%;
-                            .image-wrapper {
-                                border-left: 2px solid yellow;
-                                img {
-                                    width: 100%;
-                                    height: auto;
-                                }
-                            }
-                            .description-container {
-                                display: flex;
-                                align-items: center;
-                                border-left: 2px solid yellow;
-                                padding-left: 20px;
+                            .item {
                                 height: 100%;
-                                .translate {
-                                    h4 {
-
-                                    }
-                                    a {
-    
-                                    }
-                                    h5 {
-    
+                                .image-wrapper {
+                                    border-left: 2px solid yellow;
+                                    img {
+                                        width: 100%;
+                                        height: auto;
                                     }
                                 }
-                            }
-                            .information-wrapper {
-                                max-width: 750px;
-                                margin-right: auto;
-                                margin-top: 50px;
+                                .description-container {
+                                    display: flex;
+                                    align-items: center;
+                                    border-left: 2px solid yellow;
+                                    padding-left: 20px;
+                                    height: 100%;
+                                    .translate {
+                                        h4 {
+    
+                                        }
+                                        a {
+        
+                                        }
+                                        h5 {
+        
+                                        }
+                                    }
+                                }
+                                .information-wrapper {
+                                    max-width: 750px;
+                                    margin-right: auto;
+                                    margin-top: 50px;
+                                }
                             }
                         }
                     }
                 }
-            }
-            .owl-nav {
-                font-size: 22px;
-                .owl-prev {
-                    position: absolute;
-                    top: 40%;
-                    left: 0;
+                .owl-nav {
+                    font-size: 22px;
+                    .owl-prev {
+                        position: absolute;
+                        top: 40%;
+                        left: 0;
+                    }
+                    .owl-next {
+                        position: absolute;
+                        top: 40%;
+                        right: 0;
+                    }
                 }
-                .owl-next {
-                    position: absolute;
-                    top: 40%;
-                    right: 0;
-                }
+                .animated  {
+                    -webkit-animation-duration: 500ms;
+                    animation-duration: 500ms;
+                    -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+                }  
+                /* .owl-animated-out - only for current item */ 
+                /* This is very important class. Use z-index if you want move Out item above In item */ 
+                // .owl-animated-out {
+                //     z-index: 1;
+                // }
+                /* .owl-animated-in - only for upcoming item
+                /* This is very important class. Use z-index if you want move In item above Out item */ 
+                // .owl-animated-in {
+                //     z-index: 0;
+                // }
+                /* .fadeOut is style taken from Animation.css and this is how it looks in owl.carousel.css:  */ 
+                // .fadeOut {
+                //     -webkit-animation-name: fadeOut;
+                //     animation-name: fadeOut;
+                // }  
+                // @-webkit-keyframes fadeOut {
+                //     0% {
+                //     opacity: 1;
+                //     }  
+                //     100% {
+                //     opacity: 0;
+                //     }  
+                // }
+                // @keyframes fadeOut {
+                //     0% {
+                //         opacity: 1;
+                //     }  
+                //     100% {
+                //         opacity: 0;
+                //     }  
+                // }
             }
-            .animated  {
-                -webkit-animation-duration: 500ms;
-                animation-duration: 500ms;
-                -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-            }  
-            /* .owl-animated-out - only for current item */ 
-            /* This is very important class. Use z-index if you want move Out item above In item */ 
-            // .owl-animated-out {
-            //     z-index: 1;
-            // }
-            /* .owl-animated-in - only for upcoming item
-            /* This is very important class. Use z-index if you want move In item above Out item */ 
-            // .owl-animated-in {
-            //     z-index: 0;
-            // }
-            /* .fadeOut is style taken from Animation.css and this is how it looks in owl.carousel.css:  */ 
-            // .fadeOut {
-            //     -webkit-animation-name: fadeOut;
-            //     animation-name: fadeOut;
-            // }  
-            // @-webkit-keyframes fadeOut {
-            //     0% {
-            //     opacity: 1;
-            //     }  
-            //     100% {
-            //     opacity: 0;
-            //     }  
-            // }
-            // @keyframes fadeOut {
-            //     0% {
-            //         opacity: 1;
-            //     }  
-            //     100% {
-            //         opacity: 0;
-            //     }  
-            // }
         }
     }
 }

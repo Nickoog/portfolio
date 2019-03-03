@@ -44,7 +44,9 @@
             </div>
         </div>
     </div>
-    <div id="portrait" class="background-image" style="background-image:url('<?= get_field('bg_img_header', 'option')['url']; ?>')">
-        <div class="filter"></div>
+    <div class="portrait-wrapper">
+        <div id="portrait" class="background-image" style="background-image:url('<?= get_field('bg_img_header', 'option')['url']; ?>')">
+            <div class="filter"></div>
+        </div>
     </div>
 </section>
