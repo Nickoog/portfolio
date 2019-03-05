@@ -1,6 +1,6 @@
 .input-textarea {
     height: 125px;
-    margin-top: 20px;
+    margin-top: 30px;
     position: relative;
     .inp {
         height: 100%;
@@ -9,7 +9,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            color: gray;
+            color: $dark-gray;
             transform-origin: 0 0;
             transition: all 0.2s ease;
         }
@@ -19,7 +19,7 @@
             left: 0;
             height: 1px;
             width: 100%;
-            background: yellow;
+            background: $yellow;
             transform: scaleX(0);
             transform-origin: 0 0;
             transition: all 0.15s ease;
@@ -31,7 +31,7 @@
             font-size: 16px;
             border: none;
             border-bottom: 1px solid #c8ccd4;
-            color: gray;
+            color: $dark-gray;
             &:hover {
                 background: rgba(34,50,84,0.03);
             }
@@ -40,11 +40,11 @@
                 outline: none;
             }
             &:not(:placeholder-shown)+ span {
-                color: #5a667f;
+                color: $dark-gray;
                 transform: translateY(-16px) scale(0.75);
             }
             &:focus + span {
-                color: yellow;
+                color: $yellow;
                 transform: translateY(-16px) scale(0.75);
             }
         }

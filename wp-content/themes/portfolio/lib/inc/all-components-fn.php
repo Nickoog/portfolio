@@ -12,7 +12,7 @@ function get_modal(){
 function get_button($button_title, $type="button", $icon="", $button_style="") {
     include(locate_template("/templates/components/button.php"));
 };
-function get_separator($width, $height, $color="black", $option=""){
+function get_separator($width, $height, $color="#f8c045", $option=""){
     include(locate_template("/templates/components/separator.php"));
 };
 function get_skill($icon, $title, $content){

@@ -4,6 +4,7 @@
         .modal-header {
             padding: 0;
             border-bottom: none;
+            margin-bottom: 20px;
             .close {
                 position: absolute;
                 top: 15px;
@@ -12,7 +13,7 @@
         }
         .modal-body {
             padding: 0;
-            min-height: 372px;
+            min-height: 425px;
             #subscription-forms {
                 .form-container {
                     .info-container {
@@ -20,15 +21,16 @@
                         flex-direction: column;
                         justify-content: center;
                         padding-left: 20px;
-                        border-left: 2px solid #ff0;
+                        border-left: 2px solid $yellow;
                         height: 100%;
                         margin-top: 20px;
+                        margin-left: 20px;
                         .info-title {
                             color: black;
                             font-weight: bold;
                             font-size: 18px;
                             .fa {
-                                margin-right: 15px;
+                                margin-right: 8px;
                             }
                         }
                     }

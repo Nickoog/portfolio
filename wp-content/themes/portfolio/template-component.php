@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Components Template
+ * Template Name: Sections Template
  */
 ?>
 <?php 

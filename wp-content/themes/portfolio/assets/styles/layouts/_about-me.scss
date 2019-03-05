@@ -1,6 +1,6 @@
 #about-me {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     .container {
         padding: 75px 0;
         height: 100%;
@@ -26,22 +26,20 @@
             width: 100%;
             .button-container {
                 display: flex;
-                justify-content: center;
+                justify-content: space-around;
+                margin-top: 35px;
                 .button-wrapper {
-                    margin-right: 30px;
                 }
             }
         }
     }
     .portrait-wrapper {
         position: absolute;
-        bottom: 0;
-        left: -500px;
+        bottom: 30px;
+        left: 45px;
         z-index: -1;
-        opacity: 0;
         height: 100%;
         padding-top: 150px;
-        transition: all 1s ease-in-out;
         .background-image {
             height: 100%;
             width: 358px;
@@ -57,10 +55,30 @@
     }
 }
 
-#about-me.slide-in {
-    .portrait-wrapper {
-        transition: all 1s ease-in-out;
-        opacity: 1;
-        left: 0;
+@media #{$mobile} {
+    #about-me {
+        .container {
+            .content-container {
+                .text-container {
+                    text-align: center;
+                }
+                .skill-container {
+                    align-items: center;
+                    border-left: none;
+                    .text-wrapper {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .portrait-wrapper{
+            left: 0;
+            .background-image {
+                width: 460px;
+                .filter {
+                    background-color: hsla(0,0%,100%,.8);
+                }
+            }
+        }
     }
 }

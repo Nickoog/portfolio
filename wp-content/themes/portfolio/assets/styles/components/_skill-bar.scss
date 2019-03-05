@@ -5,6 +5,7 @@
     .skillbar-title {
         color: black;
         margin-right: 20px;
+        min-width: 80px;
         h3 {
             font-size: 1rem;
             text-transform: uppercase;
@@ -23,7 +24,7 @@
         .skillbar-bar {
             height: 10px;
             width: 0px;
-            background: yellow;
+            background: $yellow;
             border-radius: 5px;
         }
         .skillbar-percent {
@@ -33,9 +34,8 @@
             font-size: 11px;
             height: 10px;
             line-height: 35px;
-            color:gray;
+            color:$dark-gray;
             border-radius: 5px;
-            //color:rgba(0, 0, 0, 0.4);
         }
     }
 }

@@ -1,9 +1,11 @@
 .banner{
+    widows: 100%;
+    min-height: 100vh;
     .background-image {
         position: relative;
         background-color: #cccccc;
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -15,28 +17,48 @@
                 position: relative;
                 left: 0;
                 top: 20%;
-                .row {
-                    .skillbar-container {
-    
+                .skillbar-container {
+
+                }
+                .text-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: black;
+                    text-align: center;
+                    height: 100%;
+                    padding-bottom: 0px;
+                    .title-wrapper {
+            
                     }
+                    .separator {
+                        background-color: $yellow;
+                        height: 2px;
+                        width: 50px;
+                    }
+                    .text-wrapper {
+                        h2 {
+                            color: $dark-gray;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media #{$mobile} {
+    .banner{
+        .background-image {
+            .filter {
+                .col-md-5 {
+                    order: 1;
+                }
+                .col-md-7 {
+                    order: -1;
                     .text-container {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        color: black;
-                        text-align: center;
-                        height: 100%;
-                        .title-wrapper {
-                
-                        }
-                        .separator {
-                            background-color: yellow;
-                            height: 2px;
-                            width: 50px;
-                        }
-                        .text-wrapper {
-                        }
+                        padding-bottom: 35px;
                     }
                 }
             }

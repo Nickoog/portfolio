@@ -4,7 +4,7 @@
             <div class="modal-header">
                 <div class="section-title-wrapper">
                     <h2>Contact <strong>me</strong></h2>
-                    <?php get_separator('50px', '2px', 'yellow')?>
+                    <?php get_separator('50px', '2px')?>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="fa fa-times-circle" aria-hidden="true"></i>

@@ -29,6 +29,13 @@
             },6000);
         });
         // ==========================================================================
+        // Circle opener
+        // ==========================================================================
+        $('.circle-plus').on('click', function(){
+            $(this).toggleClass('opened');
+            $('.information-wrapper').slideToggle();
+        });
+        // ==========================================================================
         // Contact
         // ==========================================================================
         $('.contact-wrapper').on('click', function(){
@@ -42,19 +49,43 @@
             $('.contact-wrapper').removeClass('open');
         });
         // ==========================================================================
+        // Scrollify settings
+        // ==========================================================================
+        $.scrollify({
+            section : '.section',
+            before: function(section) {
+                if(section === 1) {
+                    $('.portrait-wrapper').addClass('fadeInLeft');
+                }
+                if(section !== 1) {
+                    $('.portrait-wrapper').removeClass('fadeInLeft');
+                }
+                if(section === 2) {
+                    $('.active .description-container').addClass('animated fadeInRight');
+                    $('.active .image-wrapper').addClass('animated fadeInLeft');
+                    $('.owl-nav').addClass('animated fadeIn delay-2s');
+                }
+                if(section !== 2) {
+                    $('.description-container').removeClass('animated fadeInRight');
+                    $('.image-wrapper').removeClass('animated fadeInLeft');
+                    $('.owl-nav').removeClass('animated fadeIn delay-2s');
+                }
+            }
+        });
+        // ==========================================================================
         // Scrollmagic
         // ==========================================================================
 
         // init controller
-        var controller = new ScrollMagic.Controller();
+        //var controller = new ScrollMagic.Controller();
 
         // build scene
-        var scene = new ScrollMagic.Scene({
-            triggerElement: "#about-me"
-        })
-        .setClassToggle("#about-me", 'slide-in') // trigger a TweenMax.to tween
+        // var scene = new ScrollMagic.Scene({
+        //     triggerElement: "#about-me"
+        // })
+        // .setClassToggle("#about-me", 'slide-in') // trigger a TweenMax.to tween
         //.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
-        .addTo(controller);
+        //.addTo(controller);
 
         // ==========================================================================
         // Owl carousel
@@ -72,24 +103,26 @@
             dots: false,
             margin: 50,
             autoplay: false,
-            navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
+            navText: ['<i class="fa fa-arrow-circle-left"></i><span>Prev</span>','<span>Next</span><i class="fa fa-arrow-circle-right"></i>'],
             animateOut: 'fadeOut',
             animateIn: 'fadeIn'
         });
         var owl = $('.owl-carousel');
         owl.owlCarousel();
         owl.on('translate.owl.carousel', function (event) {
-        $('.owl-carousel .translate').removeClass('animated fadeInRight').hide();
-        //$('.owl-carousel img').removeClass('animated fadeIn').hide();
-        $('.owl-carousel p').removeClass('animated fadeInRight').hide();
-        //$('.owl-carousel .boxed-btn').removeClass('animated').hide();
+            $('.circle-plus').removeClass('opened');
+            $('.information-wrapper').css({'display':'none'});
+        // $('.owl-carousel .translate').removeClass('animated fadeInRight').hide();
+            // $('.owl-carousel img').removeClass('animated fadeIn');
+            // $('.information-wrapper').removeClass('animated fadeIn');
+        // $('.owl-carousel .boxed-btn').removeClass('animated').hide();
         });
         
         owl.on('translated.owl.carousel', function (event) {
-            $('.owl-carousel .translate').addClass('animated fadeInRight').show();
-            $('.owl-carousel p').addClass('animated fadeInRight').show();
-           // $('.owl-carousel img').addClass('animated fadeIn').show();
-            //$('.owl-carousel .boxed-btn').addClass('animated fadeInDown').show();
+            // $('.owl-carousel .translate').addClass('animated fadeInRight').show();
+            // $('.information-wrapper').addClass('animated fadeIn');
+            // $('.owl-carousel img').addClass('animated fadeIn');
+            // $('.owl-carousel .boxed-btn').addClass('animated fadeInDown').show();
         });
         // ==========================================================================
         // Form 

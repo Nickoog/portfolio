@@ -1,5 +1,5 @@
 .input-wrapper {
-    margin-top: 15px;
+    margin-top: 25px;
     position: relative;
     .textInput {
         .inp {
@@ -8,7 +8,7 @@
             width: 100%;
             .span-label {
                 position: absolute;
-                top: 16px;
+                top: 11px;
                 left: 0;
                 font-size: 16px;
                 color: gray;
@@ -22,7 +22,7 @@
                 left: 0;
                 height: 1px;
                 width: 100%;
-                background: yellow;
+                background: $yellow;
                 transform: scaleX(0);
                 transform-origin: 0 0;
                 transition: all 0.15s ease;
@@ -43,7 +43,7 @@
                     background: rgba(34,50,84,0.03);
                 }
                 &:not(:placeholder-shown)+ span {
-                    color: #5a667f;
+                    color: $dark-gray;
                     transform: translateY(-26px) scale(0.75);
                 }
                 &:focus {
@@ -51,7 +51,7 @@
                     outline: none;
                 }
                 &:focus + span {
-                    color: yellow;
+                    color: $yellow;
                     transform: translateY(-26px) scale(0.75);
                 }
             }
