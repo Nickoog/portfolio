@@ -5,28 +5,26 @@
             <?php get_separator('50px', '2px'); ?>
         </div>
         <div class="content-container animated">
-            <div class="row justify-content-end">
-                <div class="col-md-9">
+            <div class="row justify-content-lg-end justify-content-center">
+                <div class="col-lg-9 col-12">
                     <div class="text-container">
                         <?= get_field('resume'); ?>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-end">
+            <div class="row justify-content-lg-end justify-content-center">
                 <?php
                     if( have_rows('skills_bloc') ):
                         while ( have_rows('skills_bloc') ) : the_row();
-                            echo'<div class="col-md-3">';
+                            echo'<div class="col-md-4 col-lg-3">';
                             get_skill(get_sub_field('class'), get_sub_field('bloc_title'), get_sub_field('bloc-content'));
                             echo'</div>';
                         endwhile;
                     endif;
                 ?>
             </div>
-            <div class="row width">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-9">
+            <div class="row width justify-content-lg-end justify-content-center">
+                <div class="col-lg-9 col-12">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="button-container">

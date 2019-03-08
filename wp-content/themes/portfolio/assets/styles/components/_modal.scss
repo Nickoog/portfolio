@@ -79,3 +79,19 @@
         }
     }
 }
+
+@media #{$small-screen} {
+    .modal {
+        .modal-content {
+            .modal-body {
+                #subscription-forms {
+                    .form-container {
+                        .info-container {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

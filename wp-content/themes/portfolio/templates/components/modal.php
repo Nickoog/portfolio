@@ -14,7 +14,7 @@
                 <form id="subscription-forms" class="" object="Landing page 2019: vous avez un nouveau lead!">
                     <div class="form-container">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-lg-8">
                                 <div class="row">
                                     <!-- get_input($label, $required=false, $type="text", $state="") -->
                                     <div class="col-md-6">
@@ -31,7 +31,7 @@
                                     </div>       
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-lg-4">
                                 <div class="info-container">
                                     <div class="info-title">
                                         <i class="fa fa-map-marker"></i>

@@ -16,10 +16,11 @@
                         .item {
                             position: relative;
                             height: 100%;
+                            max-height: 650px;
                             .image-wrapper {
                                 position: absolute;
-                                top: 0;
-                                left: 0;
+                                bottom: 0;
+                                right: 0;
                                 max-width: 75%;
                                 img {
                                     width: 100%;
@@ -29,8 +30,8 @@
                             }
                             .description-container {
                                 position: absolute;
-                                top: 56%;
-                                right: 10px;
+                                top: 20px;
+                                left: 10px;
                                 max-width: 60%;
                                 width: 100%;
                                 background-color: white;
@@ -116,7 +117,7 @@
                 .owl-prev {
                     position: absolute;
                     left: 40px;
-                    bottom: 18%;
+                    bottom: 30%;
                     .fa {
                         color: black;
                         margin-right: 8px;
@@ -124,7 +125,7 @@
                 }
                 .owl-next {
                     position: absolute;
-                    bottom: 70%;
+                    bottom: 80%;
                     right: 60px;
                     .fa {
                         color: black;
@@ -155,10 +156,10 @@
                             .item {
                                 .image-wrapper {
                                     max-width: 75%; 
+                                    bottom: 15%;
                                 }
                                 .description-container {
-                                    max-width: 75%;
-                                    top: 38%;
+                                
                                 }
                             }
                         }
@@ -167,10 +168,10 @@
                 .owl-nav {
                     .owl-prev {
                         left: 8px;
-                        bottom: 30%;
+                        bottom: 40%;
                     }
                     .owl-next {
-                        bottom: 75%;
+                        bottom: 85%;
                         right: 15px;
                     }
                 } 
@@ -191,7 +192,7 @@
                                 }
                                 .description-container {
                                     max-width: 75%;
-                                    top: 38%;
+                                    top: 10%;
                                 }
                             }
                         }
@@ -200,7 +201,7 @@
                 .owl-nav {
                     .owl-prev {
                         left: 8px;
-                        bottom: 30%;
+                        bottom: 35%;
                     }
                     .owl-next {
                         bottom: 75%;
@@ -221,11 +222,12 @@
                         .owl-item {
                             .item {
                                 .image-wrapper {
-                                    max-width: 80%; 
+                                    max-width: 80%;
+                                    bottom: 30%; 
                                 }
                                 .description-container {
                                     max-width: 75%;
-                                    top: 25%;
+                                    top: 10px;
                                 }
                             }
                         }
@@ -234,7 +236,7 @@
                 .owl-nav {
                     .owl-prev {
                         left: 8px;
-                        bottom: 50%;
+                        bottom: 35%;
                     }
                     .owl-next {
                         bottom: 83%;
@@ -258,7 +260,7 @@
                                     display: none;
                                 }
                                 .description-container {
-                                    max-width: 98%;
+                                    max-width: 96%;
                                     top: 20%;
                                     right: 4px
                                 }

@@ -61,13 +61,13 @@
                     $('.portrait-wrapper').removeClass('fadeInLeft');
                 }
                 if(section === 2) {
-                    $('.active .description-container').addClass('animated fadeInRight');
-                    $('.active .image-wrapper').addClass('animated fadeInLeft');
+                    $('.active .description-container').addClass('animated fadeInLeft');
+                    $('.active .image-wrapper').addClass('animated fadeInRight');
                     $('.owl-nav').addClass('animated fadeIn delay-2s');
                 }
                 if(section !== 2) {
-                    $('.description-container').removeClass('animated fadeInRight');
-                    $('.image-wrapper').removeClass('animated fadeInLeft');
+                    $('.description-container').removeClass('animated fadeInLeft');
+                    $('.image-wrapper').removeClass('animated fadeInRight');
                     $('.owl-nav').removeClass('animated fadeIn delay-2s');
                 }
             }

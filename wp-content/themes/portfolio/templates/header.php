@@ -1,5 +1,5 @@
 <header class="banner section">
-    <div class="background-image" style="background-image:url('https://as1.ftcdn.net/jpg/01/29/15/14/500_F_129151469_W5XFsIXPV0MLmzcPFqK1ZSoDmDOyTCEq.jpg')">
+    <div class="background-image" style="background-image:url('<?= get_field('background-image')['url']; ?>')">
         <div class='filter'>
             <div class="container">
                 <div class="row">
