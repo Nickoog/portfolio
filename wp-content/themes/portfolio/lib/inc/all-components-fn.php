@@ -9,7 +9,7 @@ function get_contact(){
 function get_modal(){
     include(locate_template("/templates/components/modal.php"));
 };
-function get_button($button_title, $type="button", $icon="", $button_style="") {
+function get_button($button_title, $type="button", $modal=true, $icon="", $modal_link="#contactModal") {
     include(locate_template("/templates/components/button.php"));
 };
 function get_separator($width, $height, $color="#f8c045", $option=""){

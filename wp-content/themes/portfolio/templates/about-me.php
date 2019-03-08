@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="button-container">
-                                <?php get_button('Télécharger mon CV');?>
+                                <?php get_button(get_field('button_name'), get_field('file'), false);?>
                             </div>
                         </div>
                         <div class="col-md-6">
