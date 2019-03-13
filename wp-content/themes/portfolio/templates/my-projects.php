@@ -19,12 +19,6 @@
                                 <div class="information-wrapper">
                                     <?= get_sub_field('project_info');?>
                                 </div>
-                                <!-- <div class="circle-plus closed">
-                                    <div class="circle">
-                                        <div class="horizontal"></div>
-                                        <div class="vertical"></div>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
                         <div class="col-md-7">

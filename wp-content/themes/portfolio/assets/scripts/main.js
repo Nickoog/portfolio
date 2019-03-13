@@ -21,13 +21,6 @@
         // JavaScript to be fired on all pages
 
         // ==========================================================================
-        // Circle opener
-        // ==========================================================================
-        $('.circle-plus').on('click', function(){
-            $(this).toggleClass('opened');
-            $('.information-wrapper').slideToggle();
-        });
-        // ==========================================================================
         // Contact
         // ==========================================================================
         $('.contact-wrapper').on('click', function(){
@@ -45,7 +38,6 @@
         $.scrollify({
             section : '.section',
             before: function(section) {
-                console.log(section);
                 if(section === 1) {
                     $('.portrait-wrapper').addClass('fadeInLeft');
                 }
@@ -87,10 +79,6 @@
         // ==========================================================================
         // Owl carousel
         // ==========================================================================
-
-        // Declare Carousel jquery object
-
-        // Carousel initialization
         
         $(".owl-carousel").owlCarousel({
             items: 1,
@@ -103,23 +91,6 @@
             animateOut: 'fadeOut',
             animateIn: 'fadeIn'
         });
-        var owl = $('.owl-carousel');
-        owl.owlCarousel();
-        owl.on('translate.owl.carousel', function (event) {
-            $('.circle-plus').removeClass('opened');
-        // $('.owl-carousel .translate').removeClass('animated fadeInRight').hide();
-            // $('.owl-carousel img').removeClass('animated fadeIn');
-            // $('.information-wrapper').removeClass('animated fadeIn');
-        // $('.owl-carousel .boxed-btn').removeClass('animated').hide();
-        });
-        
-        owl.on('translated.owl.carousel', function (event) {
-            // $('.owl-carousel .translate').addClass('animated fadeInRight').show();
-            // $('.information-wrapper').addClass('animated fadeIn');
-            // $('.owl-carousel img').addClass('animated fadeIn');
-            // $('.owl-carousel .boxed-btn').addClass('animated fadeInDown').show();
-        });
-
         $(".owl-carousel-inner").owlCarousel({
             items: 1,
             center: true,
@@ -201,7 +172,6 @@
             form.append('email', email);
             form.append('forms', JSON.stringify(object));
             var defaultvalue = forms.find(".portfolio-button[type='submit']").html();
-            console.log(object, forms, email);
             if ( check_required_inputs(forms.find(".required input")) ) {
                 $.ajax({
                     url: admin_ajax.ajax_url,
@@ -217,7 +187,6 @@
                         });
                     },
                     success: function (html) {
-                        console.log(html);
                         var loader = forms.find(".fa-spinner.fa-pulse");
                         var sent = forms.find(".sent-form");
                         var error = forms.find(".error");
