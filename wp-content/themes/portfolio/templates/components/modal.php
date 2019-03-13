@@ -11,7 +11,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="subscription-forms" class="" object="Landing page 2019: vous avez un nouveau lead!">
+                <form id="subscription-forms" class="" object="Contact Portfolio!">
                     <div class="form-container">
                         <div class="row">
                             <div class="col-lg-8">
@@ -26,7 +26,7 @@
                                                 get_input(
                                                     get_sub_field('label'), 
                                                     get_sub_field('required'), 
-                                                    get_sub_field('text')
+                                                    get_sub_field('type')
                                                 );
                                             ?>
                                             </div>

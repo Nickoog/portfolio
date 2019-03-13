@@ -31,6 +31,13 @@
         // ==========================================================================
         $('#contactModal .close').on('click', function (e) {
             $('.contact-wrapper').removeClass('open');
+            $('.sent-form').css({'display':'none'});
+            $('.form-container').css({'display':'block'});
+            $('.form-container').find('.textInput').each(function () {
+                $(this).removeClass('success failed');
+                $(this).find('input').val('');
+            })
+
         });
         // ==========================================================================
         // Scrollify settings
@@ -126,9 +133,10 @@
                     $(this).parents(".textInput").removeClass("failed");
                     $(this).parents(".textInput").addClass("success");
                 }
-                if ($(this).parents(".textInput").hasClass("email")) {
+                if ($(this).parents(".textInput").hasClass("mail")) {
                     if (!checkEmail($(this).val())) {
                         $(this).parents(".textInput").addClass("failed");
+                        $(this).parents(".textInput").removeClass("success");
                         if (first == null) {
                             first = $(this);
                         }
@@ -142,7 +150,7 @@
             return boolean;
         }
         // check email value
-        $(".textInput.email input").keyup(function (e) {
+        $(".textInput.mail input").keyup(function (e) {
             $(this).parents(".textInput").removeClass("success");
             $(this).parents(".textInput").removeClass("failed");
             if (checkEmail(e.target.value)) {
@@ -191,7 +199,7 @@
                         var sent = forms.find(".sent-form");
                         var error = forms.find(".error");
                         var forContainer = forms.find(".form-container");
-                        if (html !== "1") {
+                        if (html === "1") {
                             loader.fadeOut(function() {
                                 sent.css({'display':'flex'}).addClass("animated bounceInLeft");
                             });

@@ -48,16 +48,17 @@ function ajax_forms() {
     $post =str_replace("\\","",$_POST['forms']);
     $obj = json_decode($post,true);
     $text = '';
-    $recipiant = 'nicolas,hoog@gmail.com';
+    $recipiant = get_field('email','option');;
     //set confirmation mail
-    // $email = $_POST['email'];
-    // $subjet = get_field('subjet','option');
-    // $message = get_field('message','option');
+    $email = $_POST['email'];
+    $subjet = get_field('subjet','option');
+    $message = get_field('message','option');
 
     foreach ($obj as $key => $value){
         $text .="<br><br><Strong>".$key."</Strong>: ".$value."<br>";
     }
-    echo wp_mail( $recipiant, $_POST['title'], $text);
+    echo wp_mail( $recipiant, $_POST['title'], $text) && wp_mail( $email, $subjet, $message );
+    //echo wp_mail( $recipiant, $_POST['title'], $text);
     die();
 }
 // disable admin bar
