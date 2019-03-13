@@ -1,12 +1,33 @@
 #my-projects {
     min-height: 100vh;
     .container {
-        padding: 75px 0;
-        height: 100%; 
         .owl-carousel { 
             position: relative;
             height: 100%;
             padding: 20px 0px;
+            .owl-nav {
+                font-size: 20px;
+                .owl-prev,
+                .owl-next {
+                    position: absolute;
+                    top: -37px;
+                    .fa {
+                        color: black;
+                    }
+                }
+                .owl-prev {
+                    left: 200px;
+                    .fa {
+                        margin-right: 8px;
+                    }
+                }
+                .owl-next {
+                    left: 300px;
+                    .fa {
+                        margin-left: 8px;
+                    }
+                }
+            } 
             .owl-stage-outer {
                 height: 100%;
                 .owl-stage {
@@ -16,123 +37,65 @@
                         .item {
                             position: relative;
                             height: 100%;
-                            max-height: 650px;
-                            .image-wrapper {
-                                position: absolute;
-                                bottom: 0;
-                                right: 0;
-                                max-width: 75%;
-                                img {
-                                    width: 100%;
-                                    height: auto;
-                                    border-radius: 5px;
-                                }
-                            }
+                            padding-top: 100px;
                             .description-container {
-                                position: absolute;
-                                top: 20px;
-                                left: 10px;
-                                max-width: 60%;
-                                width: 100%;
-                                background-color: white;
-                                border-radius: 5px;
-                                box-shadow: 2px 2px 10px 2px rgba(123,123,123,0.75);
-                                padding: 20px;
                                 .translate {
                                     h4 {
                                         color: black;
+                                        margin-bottom: 0;
                                     }
                                     a {
                                         color: black;
+                                        margin-bottom: 1.5rem
                                     }
                                     p {
                                         margin: 1rem 0;
                                     }
                                 }
                                 .information-wrapper {
-                                    display: none;
+                    
                                 }
-                                .closed {
-                                    .vertical {
-                                        transition: all 0.5s ease-in-out;
-                                        transform: rotate(-90deg);
-                                    }
-                                    .horizontal {
-                                        transition: all 0.5s ease-in-out;
-                                        transform: rotate(-90deg);
-                                        opacity: 1;
-                                    }
-                                }  
-                                .opened {
-                                    opacity: 1;
-                                    .vertical {
-                                        transition: all 0.5s ease-in-out;
-                                        transform: rotate(90deg);
-                                    }
-                                    .horizontal {
-                                        transition: all 0.5s ease-in-out;
-                                        transform: rotate(90deg);
+                            }
+                            .owl-carousel-inner {
+                                position: relative;
+                                cursor: pointer;
+                                .image-wrapper {
+                                    min-height: 100%;
+                                }
+                                .owl-nav {
+                                    font-size: 35px;
+                                    .owl-prev,
+                                    .owl-next {
+                                        visibility: hidden;
                                         opacity: 0;
+                                        position: absolute;
+                                        top: 45%;
+                                        transition: all 300ms linear;
+                                        .fa {
+                                            color: $yellow;
+                                        }
+                                    }
+                                    .owl-prev {
+                                        left: 0;
+                                    }
+                                    .owl-next {
+                                        left: 93%;
+                                    }
+                                }
+                                &:hover {
+                                    .owl-nav {
+                                        .owl-prev,
+                                        .owl-next {
+                                            visibility: visible;
+                                            opacity: 1;
+                                        }
                                     }
                                 } 
-                                .circle-plus {
-                                    position: absolute;
-                                    top: 10px;
-                                    right: 10px;
-                                    .circle {
-                                        position: relative;
-                                        width: 2.55em;
-                                        height: 2.5em;
-                                        .horizontal {
-                                            position: absolute;
-                                            background-color: $yellow;
-                                            width: 30px;
-                                            height: 5px;
-                                            left: 50%;
-                                            margin-left: -15px;
-                                            top: 50%;
-                                            margin-top: -2.5px;
-                                            border-radius: 50px;
-                                        }
-                                        .vertical {
-                                            position: absolute;
-                                            background-color:$yellow;
-                                            width: 5px;
-                                            height: 30px;
-                                            left: 50%;
-                                            margin-left: -2.5px;
-                                            top: 50%;
-                                            margin-top: -15px;
-                                            border-radius: 50px;
-                                        }
-                                    }
-                                }
                             }
                         }
                     }
                 }
             }
-            .owl-nav {
-                font-size: 22px;
-                .owl-prev {
-                    position: absolute;
-                    left: 40px;
-                    bottom: 30%;
-                    .fa {
-                        color: black;
-                        margin-right: 8px;
-                    }
-                }
-                .owl-next {
-                    position: absolute;
-                    bottom: 80%;
-                    right: 60px;
-                    .fa {
-                        color: black;
-                        margin-left: 8px;
-                    }
-                }
-            } 
             /* .owl-animated-out - only for current item */ 
             /* This is very important class. Use z-index if you want move Out item above In item */ 
             .owl-animated-out {
@@ -142,142 +105,6 @@
             /* This is very important class. Use z-index if you want move In item above Out item */ 
             .owl-animated-in {
                 z-index: 0;
-            }
-        }
-    }
-}
-@media #{$medium-screen} {
-    #my-projects {
-        .container {
-            .owl-carousel {
-                .owl-stage-outer {
-                    .owl-stage {
-                        .owl-item {
-                            .item {
-                                .image-wrapper {
-                                    max-width: 75%; 
-                                    bottom: 15%;
-                                }
-                                .description-container {
-                                
-                                }
-                            }
-                        }
-                    }
-                }
-                .owl-nav {
-                    .owl-prev {
-                        left: 8px;
-                        bottom: 40%;
-                    }
-                    .owl-next {
-                        bottom: 85%;
-                        right: 15px;
-                    }
-                } 
-            }
-        }
-    }
-}
-@media #{$small-screen} {
-    #my-projects {
-        .container {
-            .owl-carousel {
-                .owl-stage-outer {
-                    .owl-stage {
-                        .owl-item {
-                            .item {
-                                .image-wrapper {
-                                    max-width: 75%; 
-                                }
-                                .description-container {
-                                    max-width: 75%;
-                                    top: 10%;
-                                }
-                            }
-                        }
-                    }
-                }
-                .owl-nav {
-                    .owl-prev {
-                        left: 8px;
-                        bottom: 35%;
-                    }
-                    .owl-next {
-                        bottom: 75%;
-                        right: 15px;
-                    }
-                } 
-            }
-        }
-    }
-}
-
-@media #{$mobile} {
-    #my-projects {
-        .container {
-            .owl-carousel {
-                .owl-stage-outer {
-                    .owl-stage {
-                        .owl-item {
-                            .item {
-                                .image-wrapper {
-                                    max-width: 80%;
-                                    bottom: 30%; 
-                                }
-                                .description-container {
-                                    max-width: 75%;
-                                    top: 10px;
-                                }
-                            }
-                        }
-                    }
-                }
-                .owl-nav {
-                    .owl-prev {
-                        left: 8px;
-                        bottom: 35%;
-                    }
-                    .owl-next {
-                        bottom: 83%;
-                        right: 15px;
-                    }
-                } 
-            }
-        }
-    }
-}
-
-@media #{$small-mobile} {
-    #my-projects {
-        .container {
-            .owl-carousel {
-                .owl-stage-outer {
-                    .owl-stage {
-                        .owl-item {
-                            .item {
-                                .image-wrapper {
-                                    display: none;
-                                }
-                                .description-container {
-                                    max-width: 96%;
-                                    top: 20%;
-                                    right: 4px
-                                }
-                            }
-                        }
-                    }
-                }
-                .owl-nav {
-                    .owl-prev {
-                        left: 40px;
-                        bottom: 85%;
-                    }
-                    .owl-next {
-                        bottom: 85%;
-                        right: 40px;
-                    }
-                } 
             }
         }
     }

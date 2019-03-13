@@ -21,14 +21,6 @@
         // JavaScript to be fired on all pages
 
         // ==========================================================================
-        // Skill bar animation
-        // ==========================================================================
-        $('.skillbar').each(function(){
-            $(this).find('.skillbar-bar').animate({
-                width:$(this).attr('data-percent')
-            },6000);
-        });
-        // ==========================================================================
         // Circle opener
         // ==========================================================================
         $('.circle-plus').on('click', function(){
@@ -44,8 +36,7 @@
         // ==========================================================================
         // Modal
         // ==========================================================================
-        $('#exampleModal').on('hidden.bs.modal', function (e) {
-            console.log('ici');
+        $('#contactModal .close').on('click', function (e) {
             $('.contact-wrapper').removeClass('open');
         });
         // ==========================================================================
@@ -54,39 +45,45 @@
         $.scrollify({
             section : '.section',
             before: function(section) {
+                console.log(section);
                 if(section === 1) {
                     $('.portrait-wrapper').addClass('fadeInLeft');
                 }
                 if(section !== 1) {
                     $('.portrait-wrapper').removeClass('fadeInLeft');
                 }
-                if(section === 2) {
-                    $('.active .description-container').addClass('animated fadeInLeft');
-                    $('.active .image-wrapper').addClass('animated fadeInRight');
-                    $('.owl-nav').addClass('animated fadeIn delay-2s');
-                }
-                if(section !== 2) {
-                    $('.description-container').removeClass('animated fadeInLeft');
-                    $('.image-wrapper').removeClass('animated fadeInRight');
-                    $('.owl-nav').removeClass('animated fadeIn delay-2s');
+                if (section === 3) {
+                    // Skill bar animation
+                    $('.skillbar').each(function(){
+                        $(this).find('.skillbar-bar').animate({
+                            width:$(this).attr('data-percent')
+                        },6000);
+                    });
                 }
             }
         });
+        $(".chevron-container").click(function (e) {
+            e.preventDefault();
+            $.scrollify.next();
+        });
         // ==========================================================================
-        // Scrollmagic
+        // Set animation with textillate
         // ==========================================================================
-
-        // init controller
-        //var controller = new ScrollMagic.Controller();
-
-        // build scene
-        // var scene = new ScrollMagic.Scene({
-        //     triggerElement: "#about-me"
-        // })
-        // .setClassToggle("#about-me", 'slide-in') // trigger a TweenMax.to tween
-        //.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
-        //.addTo(controller);
-
+            $('.tlt').textillate({
+                initialDelay: 0,
+                loop: true,
+                minDisplayTime: 3000,
+                autoStart: true,
+                selector: '.list',
+                in: {
+                    effect: 'fadeInDown',
+                    sync: true,
+                },
+                out: {
+                    effect: 'fadeOutDown',
+                    sync: true,
+                }
+            });
         // ==========================================================================
         // Owl carousel
         // ==========================================================================
@@ -101,7 +98,6 @@
             loop: true,
             nav: true,
             dots: false,
-            margin: 50,
             autoplay: false,
             navText: ['<i class="fa fa-arrow-circle-left"></i><span>Prev</span>','<span>Next</span><i class="fa fa-arrow-circle-right"></i>'],
             animateOut: 'fadeOut',
@@ -111,7 +107,6 @@
         owl.owlCarousel();
         owl.on('translate.owl.carousel', function (event) {
             $('.circle-plus').removeClass('opened');
-            $('.information-wrapper').css({'display':'none'});
         // $('.owl-carousel .translate').removeClass('animated fadeInRight').hide();
             // $('.owl-carousel img').removeClass('animated fadeIn');
             // $('.information-wrapper').removeClass('animated fadeIn');
@@ -123,6 +118,18 @@
             // $('.information-wrapper').addClass('animated fadeIn');
             // $('.owl-carousel img').addClass('animated fadeIn');
             // $('.owl-carousel .boxed-btn').addClass('animated fadeInDown').show();
+        });
+
+        $(".owl-carousel-inner").owlCarousel({
+            items: 1,
+            center: true,
+            loop: true,
+            nav: true,
+            dots: false,
+            singleItem: true,
+            autoplay: true,
+            autoplayHoverPause: true,
+            navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
         });
         // ==========================================================================
         // Form 
@@ -215,7 +222,7 @@
                         var sent = forms.find(".sent-form");
                         var error = forms.find(".error");
                         var forContainer = forms.find(".form-container");
-                        if (html === "1") {
+                        if (html !== "1") {
                             loader.fadeOut(function() {
                                 sent.css({'display':'flex'}).addClass("animated bounceInLeft");
                             });
@@ -225,7 +232,7 @@
                             });
                             setTimeout(function () {
                                 error.fadeOut(function(){
-                                    forContainer.css({'display':'block'}).addClass("animated bounceInLeft");
+                                    forContainer.css({'display':'block'}).addClass("animated fadeIn");
                                 });
                             }, 5000);
                         }

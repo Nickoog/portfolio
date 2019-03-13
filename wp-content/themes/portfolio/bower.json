@@ -13,7 +13,8 @@
     "gsap": "^2.0.1",
     "scrollmagic": "^2.0.5",
     "animate.css": "^3.7.0",
-    "Scrollify": "^1.0.19"
+    "Scrollify": "^1.0.19",
+    "textillate": "^0.4.0"
   },
   "overrides": {
     "bootstrap": {
@@ -46,8 +47,13 @@
       ]
     },
     "Scrollify": {
+      "main": [
+        "./jquery.scrollify.js"
+      ]
+    },
+    "textillate": {
         "main": [
-            "./jquery.scrollify.js"
+          "./jquery.textillate.js"
         ]
     }
   }

@@ -1,11 +1,11 @@
 <?php if($modal) :?>
 <div class="button-wrapper">
     <button 
+        class="portfolio-button"
         type="<?= $type; ?>" 
         name="<?= $button_title ?>" 
         data-toggle="modal" 
         data-target="<?= $modal_link ?>"
-        class="portfolio-button"
     >
         <span class="text"><?= $button_title ?></span>
         <span class="<?= $icon ?>"></span>

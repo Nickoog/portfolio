@@ -2,7 +2,7 @@
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
-$yellow: #f8c045;
+$yellow: #ffd54d;
 $yellow-800: rgba(248, 192, 69, 0.9);
 $dark-gray: #7b7b7b;
 
@@ -12,5 +12,6 @@ $medium-screen: "(max-width: 1199px)";
 $small-screen: "(max-width: 992px)";
 $mobile: "(max-width: 768px)";
 $small-mobile: "(max-width: 501px)";
-
 $custom-width: "(max-width: 1500px)";
+
+$base: 0.6rem;

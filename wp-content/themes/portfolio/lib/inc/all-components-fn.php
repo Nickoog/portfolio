@@ -32,3 +32,6 @@ function get_about_me() {
 function get_my_projects() {
     include(locate_template("/templates/my-projects.php"));
 };
+function get_my_background() {
+    include(locate_template("/templates/my-background.php"));
+};
