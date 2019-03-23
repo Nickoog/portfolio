@@ -13,12 +13,7 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="description-container">
-                                <div class="translate">
-                                    <?= get_sub_field('project_desc');?>
-                                </div> 
-                                <div class="information-wrapper">
-                                    <?= get_sub_field('project_info');?>
-                                </div>
+                                <?= get_sub_field('project_desc');?>
                             </div>
                         </div>
                         <div class="col-md-7">

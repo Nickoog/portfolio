@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-lg-end justify-content-center">
+            <div class="row width justify-content-lg-end justify-content-center">
                 <?php
                     if( have_rows('skills_bloc') ):
                         while ( have_rows('skills_bloc') ) : the_row();
@@ -24,7 +24,7 @@
                 ?>
             </div>
             <div class="row width justify-content-lg-end justify-content-center">
-                <div class="col-lg-9 col-12">
+                <div class="col-lg-8 col-12">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="button-container">
@@ -40,10 +40,10 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="portrait-wrapper animated">
-        <div id="portrait" class="background-image" style="background-image:url('<?= get_field('portrait')['url']; ?>')">
-            <div class="filter"></div>
+        <div class="portrait-wrapper animated">
+            <div id="portrait" class="background-image" style="background-image:url('<?= get_field('portrait')['url']; ?>')">
+                <div class="filter"></div>
+            </div>
         </div>
     </div>
 </section>

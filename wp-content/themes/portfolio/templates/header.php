@@ -1,4 +1,4 @@
-<header class="banner section">
+<header class="banner">
     <div class="container">
         <div class="position">
             <div class="row">
@@ -26,11 +26,13 @@
                     </div>
                 </div> 
             </div>
-            <div class="chevron-container">
-                <div class="chevron"></div>
-                <div class="chevron"></div>
-                <div class="chevron"></div>
-            </div>
+            <a href="#about-me">
+                <div class="chevron-container">
+                    <div class="chevron"></div>
+                    <div class="chevron"></div>
+                    <div class="chevron"></div>
+                </div>
+            </a>
         </div>
     </div>
 </header>

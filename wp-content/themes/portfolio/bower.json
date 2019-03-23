@@ -12,6 +12,8 @@
     "owl.carousel": "^2.3.4",
     "animate.css": "^3.7.0",
     "Scrollify": "^1.0.19",
+    "gsap": "^2.0.1",
+    "scrollmagic": "^2.0.5",
     "textillate": "^0.4.0"
   },
   "overrides": {
@@ -36,6 +38,18 @@
       "main": [
         "./jquery.scrollify.js"
       ]
+    },
+    "gsap": {
+        "main": [
+          "./src/uncompressed/TweenMax.js"
+        ]
+    },
+    "scrollmagic": {
+        "main": [
+            "./scrollmagic/uncompressed/ScrollMagic.js",
+            "./scrollmagic/uncompressed/plugins/animation.gsap.js",
+            "./scrollmagic/uncompressed/plugins/debug.addIndicators.js"
+        ]
     },
     "textillate": {
         "main": [

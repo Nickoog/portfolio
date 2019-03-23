@@ -1,5 +1,4 @@
 #my-projects {
-    min-height: 100vh;
     .container {
         .owl-carousel { 
             position: relative;
@@ -33,27 +32,22 @@
                 .owl-stage {
                     height: 100%;
                     .owl-item {
-                        height: 100%;
                         .item {
                             position: relative;
                             height: 100%;
                             padding-top: 100px;
                             .description-container {
-                                .translate {
-                                    h4 {
-                                        color: black;
-                                        margin-bottom: 0;
-                                    }
-                                    a {
-                                        color: black;
-                                        margin-bottom: 1.5rem
-                                    }
-                                    p {
-                                        margin: 1rem 0;
-                                    }
+                                margin-bottom: 50px;
+                                h4 {
+                                    color: black;
+                                    margin-bottom: 0;
                                 }
-                                .information-wrapper {
-                    
+                                a {
+                                    color: black;
+                                    margin-bottom: 1.5rem
+                                }
+                                p {
+                                    margin: 1rem 0;
                                 }
                             }
                             .owl-carousel-inner {
@@ -63,34 +57,18 @@
                                     min-height: 100%;
                                 }
                                 .owl-nav {
+                                    position: absolute;
+                                    top: 55%;
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: space-between;
                                     font-size: 35px;
                                     .owl-prev,
                                     .owl-next {
-                                        visibility: hidden;
-                                        opacity: 0;
-                                        position: absolute;
-                                        top: 45%;
-                                        transition: all 300ms linear;
-                                        .fa {
-                                            color: $yellow;
-                                        }
-                                    }
-                                    .owl-prev {
+                                        position: relative;
                                         left: 0;
                                     }
-                                    .owl-next {
-                                        left: 93%;
-                                    }
                                 }
-                                &:hover {
-                                    .owl-nav {
-                                        .owl-prev,
-                                        .owl-next {
-                                            visibility: visible;
-                                            opacity: 1;
-                                        }
-                                    }
-                                } 
                             }
                         }
                     }
@@ -105,6 +83,28 @@
             /* This is very important class. Use z-index if you want move In item above Out item */ 
             .owl-animated-in {
                 z-index: 0;
+            }
+        }
+    }
+}
+
+@media #{$small-mobile} {
+    #my-projects {
+        .container {
+            .owl-carousel { 
+                .owl-nav {
+                    .owl-prev,
+                    .owl-next {
+                        top: 37px;
+                
+                    }
+                    .owl-prev {
+                        left: 5%;
+                    }
+                    .owl-next {
+                        left: 80%;
+                    }
+                } 
             }
         }
     }

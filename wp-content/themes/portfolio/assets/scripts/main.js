@@ -26,8 +26,26 @@
         $('.contact-wrapper').on('click', function(){
             $(this).toggleClass('open');
         });
+
         // ==========================================================================
-        // Modal
+        // Smooth scroll to anchor
+        // ==========================================================================
+        $('a[href*=\\#]:not([href=\\#])').click(function() {
+            if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $(this.hash + '_toggle').delay(1000).attr('checked', 'checked');
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+
+        // ==========================================================================
+        // Modal & reinitialise contact form
         // ==========================================================================
         $('#contactModal .close').on('click', function (e) {
             $('.contact-wrapper').removeClass('open');
@@ -36,42 +54,92 @@
             $('.form-container').find('.textInput').each(function () {
                 $(this).removeClass('success failed');
                 $(this).find('input').val('');
-            })
+            });
 
         });
         // ==========================================================================
+        // Scrollmagic
+        // ==========================================================================
+
+        // init controller
+        var controller = new ScrollMagic.Controller();
+
+        // build scene
+        var scene = new ScrollMagic.Scene({
+            triggerHook: 0,
+            reverse: true
+        })
+        .setPin(".banner", {pushFollowers: false})
+        .addTo(controller);
+
+        var scene2 = new ScrollMagic.Scene({
+            triggerElement: "#about-me",
+            triggerHook: 0,
+            reverse: true,
+        })
+        .setPin("#about-me", {pushFollowers: false})
+        .reverse(false)
+        .setClassToggle(".portrait-wrapper", 'slide-in') // trigger a TweenMax.to tween
+        .addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
+
+        var scene3 = new ScrollMagic.Scene({
+            triggerElement: "#my-projects",
+            triggerHook: 0,
+        })
+        .setPin("#my-projects", {pushFollowers: false})
+        .setClassToggle(".portrait-wrapper", 'slide-in') // trigger a TweenMax.to tween
+        .addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
+
+        var scene4 = new ScrollMagic.Scene({
+            triggerElement: "#my-background",
+            triggerHook: 0,
+        })
+        .setClassToggle("#my-background", 'start') // trigger a TweenMax.to tween
+        .addIndicators() // add indicators (requires plugin
+        .on("enter", function (event) {
+            $('.skillbar').each(function(){
+                $(this).find('.skillbar-bar').animate({
+                    width:$(this).attr('data-percent')
+                },6000);
+            });
+        })
+        .addTo(controller)
+        
+        // ==========================================================================
         // Scrollify settings
         // ==========================================================================
-        $.scrollify({
-            section : '.section',
-            before: function(section) {
-                if(section === 1) {
-                    $('.portrait-wrapper').addClass('fadeInLeft');
-                }
-                if(section !== 1) {
-                    $('.portrait-wrapper').removeClass('fadeInLeft');
-                }
-                if (section === 3) {
-                    // Skill bar animation
-                    $('.skillbar').each(function(){
-                        $(this).find('.skillbar-bar').animate({
-                            width:$(this).attr('data-percent')
-                        },6000);
-                    });
-                }
-            }
-        });
-        $(".chevron-container").click(function (e) {
-            e.preventDefault();
-            $.scrollify.next();
-        });
+        // $.scrollify({
+        //     section : '.section',
+        //     before: function(section) {
+        //         if(section === 1) {
+        //             $('.portrait-wrapper').addClass('');
+        //         }
+        //         if(section !== 1) {
+        //             $('.portrait-wrapper').removeClass('fadeInLeft');
+        //         }
+        //         if (section === 3) {
+        //             // Skill bar animation
+        //             $('.skillbar').each(function(){
+        //                 $(this).find('.skillbar-bar').animate({
+        //                     width:$(this).attr('data-percent')
+        //                 },6000);
+        //             });
+        //         }
+        //     }
+        // });
+        // $(".chevron-container").click(function (e) {
+        //     e.preventDefault();
+        //     $.scrollify.next();
+        // });
         // ==========================================================================
         // Set animation with textillate
         // ==========================================================================
             $('.tlt').textillate({
                 initialDelay: 0,
                 loop: true,
-                minDisplayTime: 3000,
+                minDisplayTime: 1500,
                 autoStart: true,
                 selector: '.list',
                 in: {

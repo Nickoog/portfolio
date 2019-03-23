@@ -6,9 +6,9 @@
     data-keyboard="false"
 >
     <div class="envelope">
-        <?php //echo file_get_contents( get_template_directory_uri() .'/templates/svg/02_nonActive.svg' ); ?>
+        <img src="<?= get_field('envelope','option')['url'];?>">
     </div>
     <div class="envelope-open">
-        <?php //echo file_get_contents( get_template_directory_uri() .'/templates/svg/icon_Env2.svg' ); ?>
+        <img src="<?= get_field('envelope-open','option')['url'];?>">
     </div>
 </div>

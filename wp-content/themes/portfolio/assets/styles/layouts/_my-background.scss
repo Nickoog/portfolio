@@ -1,5 +1,18 @@
 #my-background {
     .background-container {
-        padding-top: 100px
+        padding-top: 100px;
+        .text-container {
+            margin-bottom: 50px;
+            padding-right: 50px;
+        }
+    }
+}
+@media #{$mobile} {
+    #my-background {
+        .background-container {
+            .text-container {
+                padding-right: 0px;
+            }
+        }
     }
 }
