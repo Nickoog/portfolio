@@ -1,0 +1,41 @@
+.element {
+    position: relative;
+    width: 100%;
+    padding-top: 50px;
+    margin-right: 20px;
+    border-right: 5px solid $yellow;
+    .title-wrapper {
+        position: relative;
+        padding-right: 20px;
+        cursor: pointer;
+    }
+    .bullet,
+    .bullet-inner {
+        position: absolute;
+        border-radius: 50px;
+    }
+    .bullet {
+        background-color: $yellow;
+        right: -15px;
+        top: 50px;
+        height: 26px;
+        width: 26px;
+        background-color: white;
+        border: 13px solid $yellow;
+        transition: all 300ms;
+    }
+    &:hover {
+        .bullet {
+            border: 5px solid $yellow;
+        }
+    }
+}
+.active {
+    .title-wrapper {
+        color: black;
+    }
+    .bullet {
+        border: 5px solid $yellow;
+        transition: all 300ms;
+    }
+}

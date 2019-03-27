@@ -24,6 +24,9 @@ function get_input($label, $required=false, $type="text", $state=""){
 function get_textarea($label, $row="8"){
     include(locate_template("/templates/components/textarea.php"));
 };
+function get_time_line($title, $id){
+    include(locate_template("/templates/components/time-line.php"));
+};
 
 //layouts
 function get_about_me() {

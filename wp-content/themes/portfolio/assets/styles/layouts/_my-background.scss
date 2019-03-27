@@ -1,4 +1,5 @@
 #my-background {
+    height: calc(100vh - 58px);
     .background-container {
         padding-top: 100px;
         .text-container {
@@ -9,6 +10,7 @@
 }
 @media #{$mobile} {
     #my-background {
+        height: auto;
         .background-container {
             .text-container {
                 padding-right: 0px;

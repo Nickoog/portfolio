@@ -4,7 +4,7 @@
             <h2><?php _e('A propos de <strong>moi</strong>', 'portfolio-theme');?></h2>
             <?php get_separator('50px', '2px'); ?>
         </div>
-        <div class="content-container animated">
+        <div class="content-container">
             <div class="row justify-content-lg-end justify-content-center">
                 <div class="col-lg-8 col-12">
                     <div class="text-container">
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <div class="portrait-wrapper animated">
+        <div class="portrait-wrapper">
             <div id="portrait" class="background-image" style="background-image:url('<?= get_field('portrait')['url']; ?>')">
                 <div class="filter"></div>
             </div>

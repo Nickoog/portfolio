@@ -61,43 +61,28 @@
         // Scrollmagic
         // ==========================================================================
 
-        // init controller
+        // // init controller
         var controller = new ScrollMagic.Controller();
 
-        // build scene
+        // // build scene
         var scene = new ScrollMagic.Scene({
             triggerHook: 0,
             reverse: true
         })
-        .setPin(".banner", {pushFollowers: false})
+        .setPin(".banner")
         .addTo(controller);
 
         var scene2 = new ScrollMagic.Scene({
             triggerElement: "#about-me",
             triggerHook: 0,
-            reverse: true,
         })
-        .setPin("#about-me", {pushFollowers: false})
-        .reverse(false)
-        .setClassToggle(".portrait-wrapper", 'slide-in') // trigger a TweenMax.to tween
-        .addIndicators() // add indicators (requires plugin)
+        .setClassToggle(".portrait-wrapper", 'slide-in')
         .addTo(controller);
 
         var scene3 = new ScrollMagic.Scene({
-            triggerElement: "#my-projects",
-            triggerHook: 0,
-        })
-        .setPin("#my-projects", {pushFollowers: false})
-        .setClassToggle(".portrait-wrapper", 'slide-in') // trigger a TweenMax.to tween
-        .addIndicators() // add indicators (requires plugin)
-        .addTo(controller);
-
-        var scene4 = new ScrollMagic.Scene({
             triggerElement: "#my-background",
             triggerHook: 0,
         })
-        .setClassToggle("#my-background", 'start') // trigger a TweenMax.to tween
-        .addIndicators() // add indicators (requires plugin
         .on("enter", function (event) {
             $('.skillbar').each(function(){
                 $(this).find('.skillbar-bar').animate({
@@ -105,41 +90,15 @@
                 },6000);
             });
         })
-        .addTo(controller)
+        .addTo(controller);
         
-        // ==========================================================================
-        // Scrollify settings
-        // ==========================================================================
-        // $.scrollify({
-        //     section : '.section',
-        //     before: function(section) {
-        //         if(section === 1) {
-        //             $('.portrait-wrapper').addClass('');
-        //         }
-        //         if(section !== 1) {
-        //             $('.portrait-wrapper').removeClass('fadeInLeft');
-        //         }
-        //         if (section === 3) {
-        //             // Skill bar animation
-        //             $('.skillbar').each(function(){
-        //                 $(this).find('.skillbar-bar').animate({
-        //                     width:$(this).attr('data-percent')
-        //                 },6000);
-        //             });
-        //         }
-        //     }
-        // });
-        // $(".chevron-container").click(function (e) {
-        //     e.preventDefault();
-        //     $.scrollify.next();
-        // });
         // ==========================================================================
         // Set animation with textillate
         // ==========================================================================
             $('.tlt').textillate({
                 initialDelay: 0,
                 loop: true,
-                minDisplayTime: 1500,
+                minDisplayTime: 1000,
                 autoStart: true,
                 selector: '.list',
                 in: {
@@ -147,14 +106,34 @@
                     sync: true,
                 },
                 out: {
-                    effect: 'fadeOutDown',
+                    effect: 'fadeOut',
                     sync: true,
                 }
             });
         // ==========================================================================
+        // My project JS
+        // ==========================================================================
+        $("#project-0").addClass("active");
+        $(".project-0").addClass("active");
+        $(".element .title-wrapper").on("click", function (e) {
+            var curClass = $(this).parent().attr("id");
+            $(".project-wrapper").removeClass("active");
+            $(".element").removeClass("active");
+            $(this).parent().addClass("active");
+            $(".project-wrapper." + curClass).addClass("active");
+            var height = $(".project-wrapper." + curClass).outerHeight( true );
+            $('.projects-container').css({'height':height});
+            console.log(height);
+        });
+
+        var windowHeight = $(window).height()-200;
+        var elementNumber = $('.time-line-container').find('.element');
+        var elementHeight = windowHeight / elementNumber.length;
+        $('.element').css({'height':elementHeight});
+
+        // ==========================================================================
         // Owl carousel
         // ==========================================================================
-        
         $(".owl-carousel").owlCarousel({
             items: 1,
             center: true,
@@ -162,21 +141,9 @@
             nav: true,
             dots: false,
             autoplay: false,
-            navText: ['<i class="fa fa-arrow-circle-left"></i><span>Prev</span>','<span>Next</span><i class="fa fa-arrow-circle-right"></i>'],
-            animateOut: 'fadeOut',
-            animateIn: 'fadeIn'
-        });
-        $(".owl-carousel-inner").owlCarousel({
-            items: 1,
-            center: true,
-            loop: true,
-            nav: true,
-            dots: false,
-            singleItem: true,
-            autoplay: true,
-            autoplayHoverPause: true,
             navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
         });
+
         // ==========================================================================
         // Form 
         // ==========================================================================
@@ -287,7 +254,12 @@
         });
       },
       finalize: function() {
-        // JavaScript to be fired on all pages, after page specific JS is fired
+        var elementHeight = $('.projects-container .project-wrapper').outerHeight( true );
+        $('.projects-container').css({'height':elementHeight});
+        $( window ).resize(function() {
+            var elementHeight = $('.projects-container .project-wrapper').outerHeight( true );
+            $('.projects-container').css({'height':elementHeight});
+        });
       }
     },
     // Home page

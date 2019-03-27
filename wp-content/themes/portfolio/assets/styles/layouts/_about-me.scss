@@ -1,4 +1,5 @@
 #about-me {
+    height: 100vh;
     position: relative;
     .container {
         position: relative;
@@ -82,6 +83,7 @@
 }
 @media #{$mobile} {
     #about-me {
+        height: auto;
         .container {
             .content-container {
                 padding-top: 75px;

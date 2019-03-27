@@ -1,110 +1,94 @@
 #my-projects {
     .container {
-        .owl-carousel { 
+        .section-title-wrapper {
+            margin-bottom: 50px;
+        }
+        .time-line-container{
+            display: block;
+        }
+        .projects-container {
+            //height: 500px;
             position: relative;
-            height: 100%;
-            padding: 20px 0px;
-            .owl-nav {
-                font-size: 20px;
-                .owl-prev,
-                .owl-next {
+            padding-top: 50px;
+            .project-wrapper {
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                width: 100%;
+                transition: all 500ms linear;
+                .description-container {
+                    margin-bottom: 50px;
+                    h4 {
+                        color: black;
+                        margin-bottom: 0;
+                    }
+                    a {
+                        color: black;
+                        margin-bottom: 1.5rem
+                    }
+                    p {
+                        margin: 1rem 0;
+                    }
+                }
+                .owl-nav {
+                    display: flex;
+                    justify-content: space-between;
                     position: absolute;
-                    top: -37px;
+                    top: 45%;
+                    width: 100%;
+                    font-size: 35px;
                     .fa {
                         color: black;
                     }
                 }
-                .owl-prev {
-                    left: 200px;
-                    .fa {
-                        margin-right: 8px;
-                    }
-                }
-                .owl-next {
-                    left: 300px;
-                    .fa {
-                        margin-left: 8px;
-                    }
-                }
+            }
+            .project-wrapper.active {
+                visibility: visible;
+                opacity: 1;
+                transition: all 500ms linear;
             } 
-            .owl-stage-outer {
-                height: 100%;
-                .owl-stage {
-                    height: 100%;
-                    .owl-item {
-                        .item {
-                            position: relative;
-                            height: 100%;
-                            padding-top: 100px;
-                            .description-container {
-                                margin-bottom: 50px;
-                                h4 {
-                                    color: black;
-                                    margin-bottom: 0;
-                                }
-                                a {
-                                    color: black;
-                                    margin-bottom: 1.5rem
-                                }
-                                p {
-                                    margin: 1rem 0;
-                                }
-                            }
-                            .owl-carousel-inner {
-                                position: relative;
-                                cursor: pointer;
-                                .image-wrapper {
-                                    min-height: 100%;
-                                }
-                                .owl-nav {
-                                    position: absolute;
-                                    top: 55%;
-                                    width: 100%;
-                                    display: flex;
-                                    justify-content: space-between;
-                                    font-size: 35px;
-                                    .owl-prev,
-                                    .owl-next {
-                                        position: relative;
-                                        left: 0;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            /* .owl-animated-out - only for current item */ 
-            /* This is very important class. Use z-index if you want move Out item above In item */ 
-            .owl-animated-out {
-                z-index: 1;
-            }
-            /* .owl-animated-in - only for upcoming item
-            /* This is very important class. Use z-index if you want move In item above Out item */ 
-            .owl-animated-in {
-                z-index: 0;
-            }
         }
     }
 }
 
-@media #{$small-mobile} {
+@media #{$small-screen} {
     #my-projects {
         .container {
-            .owl-carousel { 
-                .owl-nav {
-                    .owl-prev,
-                    .owl-next {
-                        top: 37px;
-                
+            .section-title-wrapper {
+                margin-bottom: 100px;
+            }
+            .time-line-container{
+                display: flex;
+                .element {
+                    border-right: none;
+                    border-bottom: 5px solid #fdc000;
+                    margin-right: 0px;
+                    padding-top: 0px;
+                    height: 100px !important;
+                    .title-wrapper {
+                        position: absolute;
+                        top: -37px;
+                        transform: rotate( 270deg );
                     }
-                    .owl-prev {
-                        left: 5%;
+                    .bullet {
+                        right: 50%;
+                        top: 88%;
                     }
-                    .owl-next {
-                        left: 80%;
+                }
+            }
+        }
+    }
+}
+@media #{$mobile} {
+    #my-projects {
+        height: auto;
+        .container {
+            .time-line-container{
+                .element {
+                    .title-wrapper {
+                        top: -25px;
                     }
-                } 
+                }
             }
         }
     }
