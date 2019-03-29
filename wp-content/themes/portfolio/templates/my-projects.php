@@ -1,4 +1,4 @@
-<section id="my-projects" class="section">
+<section id="my-projects" class="row section">
     <div class="container">
         <div class="section-title-wrapper">
             <h2><?php _e('<strong>Mes</strong> projects', 'portfolio-theme'); ?></h2>

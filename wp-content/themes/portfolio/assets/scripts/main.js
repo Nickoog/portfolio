@@ -14,7 +14,7 @@
 
   // Use this variable to set up the common and page specific functions. If you
   // rename this variable, you will also need to rename the namespace below.
-  var Sage = {
+  var Sage = { 
     // All pages
     'common': {
       init: function() {
@@ -23,7 +23,7 @@
         // ==========================================================================
         // Contact
         // ==========================================================================
-        $('.contact-wrapper').on('click', function(){
+        $('.contact-wrapper, #contact').on('click', function(){
             $(this).toggleClass('open');
         });
 
@@ -55,8 +55,12 @@
                 $(this).removeClass('success failed');
                 $(this).find('input').val('');
             });
-
+            $('.form-container').find('.input-textarea').each(function () {
+                $(this).removeClass('success failed');
+                $(this).find('textarea').val('');
+            });
         });
+        
         // ==========================================================================
         // Scrollmagic
         // ==========================================================================
@@ -123,7 +127,6 @@
             $(".project-wrapper." + curClass).addClass("active");
             var height = $(".project-wrapper." + curClass).outerHeight( true );
             $('.projects-container').css({'height':height});
-            console.log(height);
         });
 
         var windowHeight = $(window).height()-200;
@@ -140,7 +143,8 @@
             loop: true,
             nav: true,
             dots: false,
-            autoplay: false,
+            autoWidth:true,
+            autoplay: true,
             navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
         });
 

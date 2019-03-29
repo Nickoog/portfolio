@@ -1,5 +1,5 @@
 <div 
-    class="contact-wrapper" 
+    class="contact-wrapper shadow-sm" 
     data-toggle="modal" 
     data-target="#contactModal"
     data-backdrop="static" 

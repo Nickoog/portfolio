@@ -1,4 +1,4 @@
-<section id="about-me" class="section">
+<section id="about-me" class="row section shadow-lg">
     <div class="container">
         <div class="section-title-wrapper">
             <h2><?php _e('A propos de <strong>moi</strong>', 'portfolio-theme');?></h2>
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="button-container">
+                            <div id="contact" class="button-container">
                                 <?php get_button('Contact');?>
                             </div>
                         </div>

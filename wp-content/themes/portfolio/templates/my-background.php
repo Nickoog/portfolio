@@ -1,4 +1,4 @@
-<section id="my-background" class="section">
+<section id="my-background" class="row section">
     <div class="container">
         <div class="section-title-wrapper">
             <h2><?php _e('<strong>Mon</strong> parcours', 'portfolio-theme'); ?></h2>
