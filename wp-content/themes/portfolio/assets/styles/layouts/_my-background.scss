@@ -8,11 +8,13 @@
         }
     }
 }
+
 @media #{$mobile} {
     #my-background {
         height: auto;
         .background-container {
             .text-container {
+                text-align: center;
                 padding-right: 0px;
             }
         }

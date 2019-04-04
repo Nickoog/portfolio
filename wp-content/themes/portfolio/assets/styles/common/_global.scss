@@ -11,6 +11,9 @@ body {
         font-size: 2rem;
         font-weight: 400;
     }
+    .wrap {
+        overflow-x: hidden;
+    }
     .section-title-wrapper{
         display: flex;
         flex-direction: column;
@@ -22,7 +25,7 @@ body {
         }
     }
     .container {
-        padding: 75px 0;
+        padding: 75px 0px;
         height: 100%;
     }
     img {
@@ -32,5 +35,12 @@ body {
     .section {
         background-color: white;
         position: relative;
+    }
+}
+@media #{$small-mobile} {
+    body {
+        .container {
+            padding: 75px 15px;
+        }
     }
 }

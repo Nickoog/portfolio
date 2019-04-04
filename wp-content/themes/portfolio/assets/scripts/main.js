@@ -65,13 +65,13 @@
         // Scrollmagic
         // ==========================================================================
 
-        // // init controller
+        // init controller
         var controller = new ScrollMagic.Controller();
 
-        // // build scene
+        // build scene
         var scene = new ScrollMagic.Scene({
             triggerHook: 0,
-            reverse: true
+            reverse: true,
         })
         .setPin(".banner")
         .addTo(controller);
@@ -85,6 +85,7 @@
 
         var scene3 = new ScrollMagic.Scene({
             triggerElement: "#my-background",
+            offset: -30,
             triggerHook: 0,
         })
         .on("enter", function (event) {
@@ -94,32 +95,33 @@
                 },6000);
             });
         })
-        .addTo(controller);
+        .addTo(controller)
+        .addIndicators();
         
         // ==========================================================================
         // Set animation with textillate
         // ==========================================================================
-            $('.tlt').textillate({
-                initialDelay: 0,
-                loop: true,
-                minDisplayTime: 1000,
-                autoStart: true,
-                selector: '.list',
-                in: {
-                    effect: 'fadeInDown',
-                    sync: true,
-                },
-                out: {
-                    effect: 'fadeOut',
-                    sync: true,
-                }
-            });
+        $('.tlt').textillate({
+            initialDelay: 0,
+            loop: true,
+            minDisplayTime: 1000,
+            autoStart: true,
+            selector: '.list',
+            in: {
+                effect: 'fadeInDown',
+                sync: true,
+            },
+            out: {
+                effect: 'fadeOut',
+                sync: true,
+            }
+        });
         // ==========================================================================
-        // My project JS
+        // My project section JS
         // ==========================================================================
         $("#project-0").addClass("active");
         $(".project-0").addClass("active");
-        $(".element .title-wrapper").on("click", function (e) {
+        $(".element .title-wrapper, .element .bullet").on("click", function (e) {
             var curClass = $(this).parent().attr("id");
             $(".project-wrapper").removeClass("active");
             $(".element").removeClass("active");
@@ -143,8 +145,8 @@
             loop: true,
             nav: true,
             dots: false,
-            autoWidth:true,
             autoplay: true,
+            autoplayHoverPause: true,
             navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
         });
 
